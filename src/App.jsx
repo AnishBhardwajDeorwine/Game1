@@ -1,6 +1,11 @@
 import React from "react";
+import { MainScreen } from "./components/MainScreen";
 
 const App = () => {
-  return <div>Apps</div>;
+  return (
+    <div>
+      <MainScreen />
+    </div>
+  );
 };
 export default App;
