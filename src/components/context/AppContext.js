@@ -61,6 +61,7 @@ export default function AppContextProvider({ children }) {
   }
   const value = {
     play,
+    time,
     setPlay,
     startGame,
   };

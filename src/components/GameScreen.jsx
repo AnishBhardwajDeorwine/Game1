@@ -5,7 +5,7 @@ export const GameScreen = () => {
   const { time } = useContext(AppContext);
   return (
     <div className="flex flex-col ">
-      <div>{time.currennt}</div>
+      <div>Time Remaining{time?.current}</div>
       <div>Top Div</div>
       <div className=" flex">
         <div>Left Div</div>
