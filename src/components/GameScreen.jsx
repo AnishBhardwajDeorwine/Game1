@@ -10,21 +10,21 @@ export const GameScreen = () => {
       </div>
       <div className=" flex  flex-col justify-between h-[calc(100vh-48px)]">
         <div className=" shadow text-xl font-bold text-white text-center py-3">
-          Top Div
+          Top Color
         </div>
         <div className=" flex h-full ">
-          <div className=" flex-1 flex items-center justify-center shadow-sm">
-            Left Div
+          <div className=" flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm">
+            Left Color
           </div>
-          <div className=" flex-[3] flex items-center justify-center text-center shadow-sm">
-            Center Div
+          <div className=" flex-[3] flex items-center justify-center text-xl font-bold text-white text-center shadow-sm">
+            <div draggable>Center Color</div>
           </div>
-          <div className=" flex-1 shadow-sm text-center flex items-center justify-center">
-            Right Div
+          <div className=" flex-1 shadow-sm text-center flex items-center  text-xl font-bold text-white justify-center">
+            Right Color
           </div>
         </div>
         <div className="shadow text-xl font-bold text-white text-center py-3">
-          Bottom Div
+          Bottom Color
         </div>
       </div>
     </div>

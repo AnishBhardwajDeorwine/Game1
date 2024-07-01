@@ -49,7 +49,7 @@ export default function AppContextProvider({ children }) {
   const [countDown, setCountdown] = useState(10);
 
   function startGame() {
-    console.log("App Started ");
+    console.log("Game Started ");
     setPlay(true);
   }
   const value = {
