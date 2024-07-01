@@ -57,6 +57,7 @@ export default function AppContextProvider({ children }) {
         clearInterval(timeoutID);
       }
       time.current = time.current - 1;
+      console.log(time.current);
     }, 1000);
   }
   const value = {
