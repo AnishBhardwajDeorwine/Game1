@@ -9,14 +9,16 @@ export const MainScreen = () => {
     startGame();
   }
   return (
-    <div className=" flex items-center justify-center w-screen h-screen">
+    <div>
       {!play ? (
-        <button
-          className=" px-10 py-3 font-bold bg-slate-600 "
-          onClick={() => playStart()}
-        >
-          Play
-        </button>
+        <div className=" flex items-center justify-center w-screen h-screen">
+          <button
+            className=" px-10 py-3 font-bold bg-slate-600 "
+            onClick={() => playStart()}
+          >
+            Play
+          </button>
+        </div>
       ) : (
         <GameScreen />
       )}

@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AppContext = createContext();
 export default function AppContextProvider({ children }) {
@@ -46,30 +46,15 @@ export default function AppContextProvider({ children }) {
   ];
   const [play, setPlay] = useState(false);
   const [win, setWin] = useState("");
-  const time = useRef(10);
-  let timeoutID;
-  function starttInterval() {
-    timeoutID = setTimeout(() => {
-      if (time.current === 0) {
-        setPlay(false);
-        setWin(false);
-        removeInterval();
-      }
-      time.current = time.current - 1;
-      console.log(time.current);
-    }, 1000);
-  }
-  function removeInterval() {
-    clearInterval(timeoutID);
-  }
+  const [countDown, setCountdown] = useState(10);
+
   function startGame() {
     console.log("App Started ");
     setPlay(true);
-    starttInterval();
   }
   const value = {
     play,
-    time,
+    countDown,
     setPlay,
     startGame,
   };
