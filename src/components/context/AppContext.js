@@ -47,18 +47,25 @@ export default function AppContextProvider({ children }) {
   const [play, setPlay] = useState(false);
   const [win, setWin] = useState("");
   const time = useRef(10);
-  function startGame() {
-    console.log("App Started ");
-    setPlay(true);
-    const timeoutID = setTimeout(() => {
+  let timeoutID;
+  function starttInterval() {
+    timeoutID = setTimeout(() => {
       if (time.current === 0) {
         setPlay(false);
         setWin(false);
-        clearInterval(timeoutID);
+        removeInterval();
       }
       time.current = time.current - 1;
       console.log(time.current);
     }, 1000);
+  }
+  function removeInterval() {
+    clearInterval(timeoutID);
+  }
+  function startGame() {
+    console.log("App Started ");
+    setPlay(true);
+    starttInterval();
   }
   const value = {
     play,
