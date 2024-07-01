@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "./context/AppContext";
 
 export const GameScreen = () => {
+  const { time } = useContext(AppContext);
   return (
     <div className="flex flex-col ">
+      <div>{time.currennt}</div>
       <div>Top Div</div>
       <div className=" flex">
         <div>Left Div</div>
