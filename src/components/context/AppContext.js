@@ -67,7 +67,7 @@ export default function AppContextProvider({ children }) {
           } else {
             clearInterval(interval);
             setWin("Time's up! You lose.");
-            setPlay(false);
+            //setPlay(false);
             const startIndex = Math.floor(Math.random() * 6);
 
             showColors.length = 0;

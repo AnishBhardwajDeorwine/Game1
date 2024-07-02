@@ -56,11 +56,11 @@ export const GameScreen = () => {
       <div className=" text-right font-bold text-white px-3 sm:px-6 bg-slate-500 py-3 sm:text-xl">
         Time Remaining:{countDown}
       </div>
-      <div className={` flex  flex-col justify-between h-[calc(100vh-48px)]`}>
+      <div className={` flex  flex-col justify-between h-[calc(100vh-64px)]`}>
         <div
           onDrop={handleTopDrop}
           onDragOver={handleTopDragOver}
-          className={` shadow text-xl font-bold text-white text-center py-3  bg-[${showColors[1]?.hex}]`}
+          className={` shadow text-xl font-bold text-white text-center py-3  bg-${showColors[1]?.name}`}
         >
           {showColors[0]?.name} color
         </div>
@@ -68,7 +68,7 @@ export const GameScreen = () => {
           <div
             onDrop={handleLeftDrop}
             onDragOver={handleLeftDragOver}
-            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-[${showColors[2]?.hex}]`}
+            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
           >
             {showColors[1]?.name} color
           </div>
@@ -76,7 +76,7 @@ export const GameScreen = () => {
             <div
               draggable
               onDragStart={(e) => handleOnDrag(e, targetcolor)}
-              className={` p-2 sm:p-4 rounded-md border bg-[${targetcolor?.hex}]`}
+              className={` p-2 sm:p-4 rounded-md border bg-${targetcolor?.name}`}
             >
               {targetcolor?.name} color
             </div>
@@ -84,7 +84,7 @@ export const GameScreen = () => {
           <div
             onDrop={handleRightDrop}
             onDragOver={handleRightDragOver}
-            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-[${showColors[3]?.hex}]`}
+            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
           >
             {showColors[2]?.name} color
           </div>
@@ -92,7 +92,7 @@ export const GameScreen = () => {
         <div
           onDrop={handleBottomDrop}
           onDragOver={handleBottomDragOver}
-          className={`shadow text-xl font-bold text-white text-center py-3 required:bg-[${showColors[0]?.hex}]`}
+          className={`shadow text-xl font-bold text-white text-center py-3 required:bg-${showColors[0]?.name}`}
         >
           {showColors[3]?.name} color
         </div>
