@@ -85,6 +85,23 @@ export default function AppContextProvider({ children }) {
     console.log("Game Started ");
     setPlay(true);
   }
+  function checkWin(current, dragged) {
+    console.log("Checking win");
+    console.log("Current", current);
+    console.log("target", dragged);
+    if (current.name === dragged.name) {
+      setWin("You have won!");
+      setPlay(false);
+      const startIndex = Math.floor(Math.random() * 6);
+
+      showColors.length = 0;
+      showColors.push(...colors.slice(startIndex, startIndex + 4));
+      const randIdx = Math.floor(Math.random() * 4);
+      targetcolor = showColors[randIdx];
+    } else {
+      console.log("Wrong selection");
+    }
+  }
   const value = {
     play,
     countDown,
@@ -93,6 +110,7 @@ export default function AppContextProvider({ children }) {
     win,
     showColors,
     targetcolor,
+    checkWin,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
