@@ -3,7 +3,7 @@ import { AppContext } from "./context/AppContext";
 import { GameScreen } from "./GameScreen";
 
 export const MainScreen = () => {
-  const { play, startGame, win } = useContext(AppContext);
+  const { play, startGame, win, totalWins } = useContext(AppContext);
 
   return (
     <div>
@@ -24,7 +24,10 @@ export const MainScreen = () => {
               >
                 Play Again
               </button>
-              <div className=" font-bold text-lg animate-bounce ">{win}</div>
+              <div>
+                <div className=" font-bold text-lg animate-bounce ">{win}</div>
+                <div className=" font-bold text-lg">Total Wins:{totalWins}</div>
+              </div>
             </div>
           )}
         </div>

@@ -53,10 +53,12 @@ export default function AppContextProvider({ children }) {
   const [play, setPlay] = useState(false);
   const [win, setWin] = useState("");
   const [countDown, setCountdown] = useState(10);
+  const [totalWins, setTotalWins] = useState(0);
   useEffect(() => {
     if (play) {
       setCountdown(10);
       setWin("");
+      setTotalWins(0);
 
       // Pick four random colors
 
@@ -92,6 +94,7 @@ export default function AppContextProvider({ children }) {
     if (current.name === dragged.name) {
       setWin("You have won!");
       setCountdown(10);
+      setTotalWins((prev) => prev + 1);
       const startIndex = Math.floor(Math.random() * 6);
 
       showColors.length = 0;
@@ -119,6 +122,7 @@ export default function AppContextProvider({ children }) {
     showColors,
     targetcolor,
     checkWin,
+    totalWins,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
