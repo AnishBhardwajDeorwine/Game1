@@ -4,14 +4,15 @@ import { AppContext } from "../context/AppContext";
 export const GameScreen = () => {
   const { countDown, showColors, targetcolor, checkWin, totalWins } =
     useContext(AppContext);
-  const handleOnDrag = (e, target) => {
-    e.dataTransfer.setData("Item", JSON.stringify(target));
-  };
+
   const headerSyling = "font-bold text-white  sm:text-xl";
   const verticalBoxStyling =
     "shadow text-2xl sm:text-3xl font-bold text-white text-center py-3 sm:py-6";
   const horizontalBoxStyling =
     "flex items-center justify-center text-xl sm:text-3xl font-bold text-white text-center shadow-sm";
+  const handleOnDrag = (e, target) => {
+    e.dataTransfer.setData("Item", JSON.stringify(target));
+  };
   const handleDrop = (e, i) => {
     console.log("Handling drop");
     const item = e.dataTransfer.getData("Item");
