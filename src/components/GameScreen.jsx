@@ -3,7 +3,7 @@ import { AppContext } from "./context/AppContext";
 
 export const GameScreen = () => {
   const { countDown, showColors, targetcolor } = useContext(AppContext);
-  console.log(showColors[0]?.hex);
+
   return (
     <div className="flex flex-col   gap-2 ">
       <div className=" text-right font-bold text-white px-3 sm:px-6 bg-slate-500 py-3 sm:text-xl">
@@ -11,7 +11,7 @@ export const GameScreen = () => {
       </div>
       <div className={` flex  flex-col justify-between h-[calc(100vh-48px)]`}>
         <div
-          className={` shadow text-xl font-bold text-white text-center py-3 bg-[${showColors[1]?.hex}]`}
+          className={` shadow text-xl font-bold text-white text-center py-3  bg-[${showColors[1]?.hex}]`}
         >
           {showColors[0]?.name} color
         </div>

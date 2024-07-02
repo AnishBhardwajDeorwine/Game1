@@ -45,7 +45,7 @@ const colors = [
 ];
 const showColors = [];
 const startIndex = Math.floor(Math.random() * 6);
-console.log(startIndex);
+// console.log(startIndex);
 showColors.push(...colors.slice(startIndex, startIndex + 4));
 const randIdx = Math.floor(Math.random() * 4);
 let targetcolor = showColors[randIdx];
@@ -69,13 +69,11 @@ export default function AppContextProvider({ children }) {
             setWin("Time's up! You lose.");
             setPlay(false);
             const startIndex = Math.floor(Math.random() * 6);
-            console.log(startIndex);
+
             showColors.length = 0;
             showColors.push(...colors.slice(startIndex, startIndex + 4));
             const randIdx = Math.floor(Math.random() * 4);
             targetcolor = showColors[randIdx];
-
-            // return 0;
           }
         });
       }, 1000);
