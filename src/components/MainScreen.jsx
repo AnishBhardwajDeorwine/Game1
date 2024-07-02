@@ -26,9 +26,16 @@ export const MainScreen = () => {
               </button>
               <div>
                 <div className=" font-bold text-2xl animate-bounce ">{win}</div>
-                <div className=" font-bold text-2xl">
-                  Total Wins:{totalWins}
-                </div>
+                {totalWins > 0 && (
+                  <div className=" font-bold text-2xl">
+                    Total Win:&nbsp;
+                    {totalWins >= 2 ? (
+                      <>{totalWins} Matches</>
+                    ) : (
+                      <>{totalWins} Match</>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )}

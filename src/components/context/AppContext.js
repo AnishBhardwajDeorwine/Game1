@@ -111,7 +111,6 @@ export default function AppContextProvider({ children }) {
       showColors.push(...colors.slice(startIndex, startIndex + 4));
       const randIdx = Math.floor(Math.random() * 4);
       targetcolor = showColors[randIdx];
-      console.log("Wrong selection");
     }
   }
   const value = {
