@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "./context/AppContext";
+import { AppContext } from "../context/AppContext";
 import { GameScreen } from "./GameScreen";
 
 export const MainScreen = () => {
