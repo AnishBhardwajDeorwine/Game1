@@ -97,7 +97,6 @@ export default function AppContextProvider({ children }) {
       setCountdown(10);
       setTotalWins((prev) => prev + 1);
       const startIndex = Math.floor(Math.random() * 6);
-
       showColors.length = 0;
       showColors.push(...colors.slice(startIndex, startIndex + 4));
       const randIdx = Math.floor(Math.random() * 4);
@@ -106,7 +105,6 @@ export default function AppContextProvider({ children }) {
       setWin("You have loss the game!");
       setPlay(false);
       const startIndex = Math.floor(Math.random() * 6);
-
       showColors.length = 0;
       showColors.push(...colors.slice(startIndex, startIndex + 4));
       const randIdx = Math.floor(Math.random() * 4);

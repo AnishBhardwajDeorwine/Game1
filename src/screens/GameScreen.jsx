@@ -7,6 +7,11 @@ export const GameScreen = () => {
   const handleOnDrag = (e, target) => {
     e.dataTransfer.setData("Item", JSON.stringify(target));
   };
+  const headerSyling = "font-bold text-white  sm:text-xl";
+  const verticalBoxStyling =
+    "shadow text-2xl sm:text-3xl font-bold text-white text-center py-3 sm:py-6";
+  const horizontalBoxStyling =
+    "flex items-center justify-center text-xl sm:text-3xl font-bold text-white text-center shadow-sm";
   const handleDrop = (e, i) => {
     console.log("Handling drop");
     const item = e.dataTransfer.getData("Item");
@@ -20,11 +25,11 @@ export const GameScreen = () => {
   return (
     <div className="flex flex-col   gap-2 ">
       <div className=" flex justify-between px-3 sm:px-6 bg-slate-500 py-3">
-        <div className="  font-bold text-white  sm:text-xl">
+        <div className={headerSyling}>
           Total Wins:&nbsp;
           {totalWins >= 2 ? <>{totalWins} Matches</> : <>{totalWins} Match</>}
         </div>
-        <div className=" text-right  font-bold text-white  sm:text-xl">
+        <div className={` text-right ${headerSyling} `}>
           Time Remaining:&nbsp;{countDown}s
         </div>
       </div>
@@ -32,7 +37,7 @@ export const GameScreen = () => {
         <div
           onDrop={(e) => handleDrop(e, 0)}
           onDragOver={handleDragOver}
-          className={` shadow text-2xl sm:text-3xl   font-bold text-white text-center py-3 sm:py-6  bg-${showColors[1]?.name}`}
+          className={`${verticalBoxStyling} bg-${showColors[1]?.name}`}
         >
           {showColors[0]?.name}
         </div>
@@ -40,11 +45,11 @@ export const GameScreen = () => {
           <div
             onDrop={(e) => handleDrop(e, 1)}
             onDragOver={handleDragOver}
-            className={` flex-1 flex items-center justify-center text-xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
+            className={` flex-1 ${horizontalBoxStyling}  bg-${showColors[2]?.name}`}
           >
             {showColors[1]?.name}
           </div>
-          <div className=" flex-[3] flex items-center justify-center text-xl sm:text-3xl font-bold text-white text-center shadow-sm">
+          <div className={` flex-[3] ${horizontalBoxStyling}`}>
             <div
               draggable
               onDragStart={(e) => handleOnDrag(e, targetcolor)}
@@ -56,7 +61,7 @@ export const GameScreen = () => {
           <div
             onDrop={(e) => handleDrop(e, 2)}
             onDragOver={handleDragOver}
-            className={` flex-1 flex items-center justify-center text-xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
+            className={` flex-1 ${horizontalBoxStyling} bg-${showColors[3]?.name}`}
           >
             {showColors[2]?.name}
           </div>
@@ -64,7 +69,7 @@ export const GameScreen = () => {
         <div
           onDrop={(e) => handleDrop(e, 3)}
           onDragOver={handleDragOver}
-          className={`shadow text-2xl sm:text-3xl  font-bold text-white text-center py-3 sm:py-6 bg-${showColors[0]?.name}`}
+          className={`${verticalBoxStyling} bg-${showColors[0]?.name}`}
         >
           {showColors[3]?.name}
         </div>
