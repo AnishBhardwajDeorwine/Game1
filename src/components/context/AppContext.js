@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export const AppContext = createContext();
 const colors = [
@@ -92,7 +93,7 @@ export default function AppContextProvider({ children }) {
     console.log("Current", current);
     console.log("target", dragged);
     if (current.name === dragged.name) {
-      setWin("You have won!");
+      toast.success("You have won!");
       setCountdown(10);
       setTotalWins((prev) => prev + 1);
       const startIndex = Math.floor(Math.random() * 6);

@@ -11,7 +11,7 @@ export const MainScreen = () => {
         <div className=" flex items-center justify-center w-screen h-screen">
           {win === "" ? (
             <button
-              className=" px-10 py-3 font-bold text-white bg-slate-600 rounded-md"
+              className=" px-10 py-3 font-bold text-2xl text-white bg-slate-600 rounded-md"
               onClick={() => startGame()}
             >
               Play
@@ -19,14 +19,16 @@ export const MainScreen = () => {
           ) : (
             <div className=" flex gap-6 justify-center items-center flex-col">
               <button
-                className=" px-10 py-3 font-bold text-white rounded-md bg-slate-600 "
+                className=" px-10 py-3 font-bold text-white text-2xl rounded-md bg-slate-600 "
                 onClick={() => startGame()}
               >
                 Play Again
               </button>
               <div>
-                <div className=" font-bold text-lg animate-bounce ">{win}</div>
-                <div className=" font-bold text-lg">Total Wins:{totalWins}</div>
+                <div className=" font-bold text-2xl animate-bounce ">{win}</div>
+                <div className=" font-bold text-2xl">
+                  Total Wins:{totalWins}
+                </div>
               </div>
             </div>
           )}

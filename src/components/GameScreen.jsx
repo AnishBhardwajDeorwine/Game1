@@ -57,7 +57,7 @@ export const GameScreen = () => {
         <div className="  font-bold text-white  sm:text-xl">
           Total Wins:{totalWins}
         </div>
-        <div className="  font-bold text-white  sm:text-xl">
+        <div className=" text-right  font-bold text-white  sm:text-xl">
           Time Remaining:{countDown}
         </div>
       </div>
@@ -73,11 +73,11 @@ export const GameScreen = () => {
           <div
             onDrop={handleLeftDrop}
             onDragOver={handleLeftDragOver}
-            className={` flex-1 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
+            className={` flex-1 flex items-center justify-center text-xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
           >
             {showColors[1]?.name}
           </div>
-          <div className=" flex-[3] flex items-center justify-center text-2xl sm:text-3xl font-bold text-white text-center shadow-sm">
+          <div className=" flex-[3] flex items-center justify-center text-xl sm:text-3xl font-bold text-white text-center shadow-sm">
             <div
               draggable
               onDragStart={(e) => handleOnDrag(e, targetcolor)}
@@ -89,7 +89,7 @@ export const GameScreen = () => {
           <div
             onDrop={handleRightDrop}
             onDragOver={handleRightDragOver}
-            className={` flex-1 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
+            className={` flex-1 flex items-center justify-center text-xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
           >
             {showColors[2]?.name}
           </div>
