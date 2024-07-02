@@ -67,7 +67,7 @@ export default function AppContextProvider({ children }) {
           } else {
             clearInterval(interval);
             setWin("Time's up! You lose.");
-            //setPlay(false);
+            setPlay(false);
             const startIndex = Math.floor(Math.random() * 6);
 
             showColors.length = 0;
@@ -91,7 +91,7 @@ export default function AppContextProvider({ children }) {
     console.log("target", dragged);
     if (current.name === dragged.name) {
       setWin("You have won!");
-      setPlay(false);
+      setCountdown(10);
       const startIndex = Math.floor(Math.random() * 6);
 
       showColors.length = 0;
@@ -99,6 +99,14 @@ export default function AppContextProvider({ children }) {
       const randIdx = Math.floor(Math.random() * 4);
       targetcolor = showColors[randIdx];
     } else {
+      setWin("You have loss the game!");
+      setPlay(false);
+      const startIndex = Math.floor(Math.random() * 6);
+
+      showColors.length = 0;
+      showColors.push(...colors.slice(startIndex, startIndex + 4));
+      const randIdx = Math.floor(Math.random() * 4);
+      targetcolor = showColors[randIdx];
       console.log("Wrong selection");
     }
   }

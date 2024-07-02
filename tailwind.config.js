@@ -17,5 +17,17 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    "bg-Yellow",
+    "bg-Gray",
+    "bg-Red",
+    "bg-Cyan",
+    "bg-Violet",
+    "bg-Purple",
+    "bg-Pink",
+    "bg-Olive",
+    "bg-Teal",
+    "bg-Navy",
+  ],
   plugins: [],
 };

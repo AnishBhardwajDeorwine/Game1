@@ -60,41 +60,41 @@ export const GameScreen = () => {
         <div
           onDrop={handleTopDrop}
           onDragOver={handleTopDragOver}
-          className={` shadow text-xl font-bold text-white text-center py-3  bg-${showColors[1]?.name}`}
+          className={` shadow text-2xl sm:text-3xl   font-bold text-white text-center py-3 sm:py-6  bg-${showColors[1]?.name}`}
         >
-          {showColors[0]?.name} color
+          {showColors[0]?.name}
         </div>
         <div className=" flex h-full ">
           <div
             onDrop={handleLeftDrop}
             onDragOver={handleLeftDragOver}
-            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
+            className={` flex-1 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[2]?.name}`}
           >
-            {showColors[1]?.name} color
+            {showColors[1]?.name}
           </div>
-          <div className=" flex-[3] flex items-center justify-center text-xl font-bold text-white text-center shadow-sm">
+          <div className=" flex-[3] flex items-center justify-center text-2xl sm:text-3xl font-bold text-white text-center shadow-sm">
             <div
               draggable
               onDragStart={(e) => handleOnDrag(e, targetcolor)}
               className={` p-2 sm:p-4 rounded-md border bg-${targetcolor?.name}`}
             >
-              {targetcolor?.name} color
+              {targetcolor?.name}{" "}
             </div>
           </div>
           <div
             onDrop={handleRightDrop}
             onDragOver={handleRightDragOver}
-            className={` flex-1 flex items-center justify-center text-xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
+            className={` flex-1 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white shadow-sm bg-${showColors[3]?.name}`}
           >
-            {showColors[2]?.name} color
+            {showColors[2]?.name}
           </div>
         </div>
         <div
           onDrop={handleBottomDrop}
           onDragOver={handleBottomDragOver}
-          className={`shadow text-xl font-bold text-white text-center py-3 required:bg-${showColors[0]?.name}`}
+          className={`shadow text-2xl sm:text-3xl  font-bold text-white text-center py-3 sm:py-6 bg-${showColors[0]?.name}`}
         >
-          {showColors[3]?.name} color
+          {showColors[3]?.name}
         </div>
       </div>
     </div>
