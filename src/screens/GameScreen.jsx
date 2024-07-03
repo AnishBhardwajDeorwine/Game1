@@ -4,7 +4,6 @@ import { AppContext } from "../context/AppContext";
 export const GameScreen = () => {
   const { countDown, showColors, targetcolor, checkWin, totalWins } =
     useContext(AppContext);
-
   const headerSyling = "font-bold text-white  sm:text-xl";
   const verticalBoxStyling =
     "shadow text-2xl sm:text-3xl font-bold text-white text-center py-3 sm:py-6";

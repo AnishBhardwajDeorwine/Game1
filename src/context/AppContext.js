@@ -44,6 +44,15 @@ const colors = [
     hex: "#000080",
   },
 ];
+const getUniqueindex = (size) => {
+  const value = new Set();
+  while (value.size < size) {
+    const randomIndex = Math.floor(Math.random() * 4);
+    value.add(randomIndex);
+  }
+  return Array.from(value);
+};
+
 const showColors = [];
 const startIndex = Math.floor(Math.random() * 6);
 // console.log(startIndex);
@@ -121,6 +130,7 @@ export default function AppContextProvider({ children }) {
     targetcolor,
     checkWin,
     totalWins,
+    getUniqueindex,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
