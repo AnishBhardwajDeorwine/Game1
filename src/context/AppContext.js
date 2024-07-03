@@ -53,6 +53,18 @@ const getUniqueindex = (size) => {
   return Array.from(value);
 };
 
+let uniqueIndex = getUniqueindex(4);
+let uniqueIndex2 = getUniqueindex(4);
+const checkSame = (arr1, arr2) => {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] === arr2[i]) {
+      let temp = arr2[i];
+      arr2[i] = arr2[(i + 1) % arr2.length];
+      arr2[(i + 1) % arr2.length] = temp;
+    }
+  }
+};
+checkSame(uniqueIndex, uniqueIndex2);
 const showColors = [];
 const startIndex = Math.floor(Math.random() * 6);
 // console.log(startIndex);
@@ -86,6 +98,9 @@ export default function AppContextProvider({ children }) {
             showColors.push(...colors.slice(startIndex, startIndex + 4));
             const randIdx = Math.floor(Math.random() * 4);
             targetcolor = showColors[randIdx];
+            uniqueIndex = getUniqueindex(4);
+            uniqueIndex2 = getUniqueindex(4);
+            checkSame(uniqueIndex, uniqueIndex2);
           }
         });
       }, 1000);
@@ -105,20 +120,18 @@ export default function AppContextProvider({ children }) {
       toast.success("You have won!");
       setCountdown(10);
       setTotalWins((prev) => prev + 1);
-      const startIndex = Math.floor(Math.random() * 6);
-      showColors.length = 0;
-      showColors.push(...colors.slice(startIndex, startIndex + 4));
-      const randIdx = Math.floor(Math.random() * 4);
-      targetcolor = showColors[randIdx];
     } else {
       setWin("You have loss the game!");
       setPlay(false);
-      const startIndex = Math.floor(Math.random() * 6);
-      showColors.length = 0;
-      showColors.push(...colors.slice(startIndex, startIndex + 4));
-      const randIdx = Math.floor(Math.random() * 4);
-      targetcolor = showColors[randIdx];
     }
+    const startIndex = Math.floor(Math.random() * 6);
+    showColors.length = 0;
+    showColors.push(...colors.slice(startIndex, startIndex + 4));
+    const randIdx = Math.floor(Math.random() * 4);
+    targetcolor = showColors[randIdx];
+    uniqueIndex = getUniqueindex(4);
+    uniqueIndex2 = getUniqueindex(4);
+    checkSame(uniqueIndex, uniqueIndex2);
   }
   const value = {
     play,
@@ -130,7 +143,8 @@ export default function AppContextProvider({ children }) {
     targetcolor,
     checkWin,
     totalWins,
-    getUniqueindex,
+    uniqueIndex,
+    uniqueIndex2,
   };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
